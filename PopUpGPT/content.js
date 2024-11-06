@@ -12,13 +12,16 @@ button.style.cursor = "pointer";
 button.style.zIndex = "1000";
 document.body.appendChild(button);
 
+// ボタンがクリックされたときに非表示を抑制するフラグ
+let isButtonClick = false;
+
 // テキスト選択時に絵文字を表示
 document.addEventListener("mouseup", () => {
   const selection = window.getSelection().toString().trim();
-  
+
   if (selection) {
     console.log("Selected text:", selection);
-    
+
     const range = window.getSelection().getRangeAt(0);
     const rect = range.getBoundingClientRect();
 
@@ -26,19 +29,30 @@ document.addEventListener("mouseup", () => {
     button.style.top = `${window.scrollY + rect.top - 30}px`; // 上に少しオフセット
     button.style.left = `${window.scrollX + rect.left}px`;
     button.style.display = "block"; // 絵文字を表示
-
-    // 絵文字のクリックイベントを設定
-    button.onclick = () => {
-      console.log("Button clicked with selection:", selection);
-      const url = `https://chatgpt.com/?q=${encodeURIComponent(selection)}&hints=search&ref=ext&temporary-chat=true`;
-      window.open(url, "_blank");
-    };
-  } else {
-    button.style.display = "none"; // テキストが選択されていない場合は非表示
   }
 });
 
-// 絵文字をクリックした時以外のクリックで絵文字を非表示
+
+
+button.addEventListener("mousedown", (e) => {
+  e.stopPropagation(); // 他のイベントへの伝播を防止
+  const selection = window.getSelection().toString().trim();
+  if (selection) {
+    const url = `https://chatgpt.com/?q=${encodeURIComponent(selection)}&hints=search&ref=ext&temporary-chat=true`;
+    window.open(url, "_blank");
+  }
+  button.style.display = "none"; // クリック後にボタンを非表示に
+  isButtonClick = false; // クリック後にリセット
+});
+
+// 選択解除時にボタンを非表示にする
+document.addEventListener("selectionchange", () => {
+  if (!isButtonClick && !window.getSelection().toString().trim()) {
+    button.style.display = "none"; // 選択解除時にボタンを非表示
+  }
+});
+
+// 他の場所をクリックしたときの処理
 document.addEventListener("mousedown", (event) => {
   if (event.target !== button) {
     button.style.display = "none"; // 他の場所をクリックすると絵文字を非表示に
