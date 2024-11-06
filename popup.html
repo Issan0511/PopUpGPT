@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Assistant</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .container { 
+      max-width: 500px; 
+      margin: auto; 
+      text-align: center; 
+      padding: 10px;
+    }
+    .message { 
+      font-weight: bold; 
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px; /* ボックスとボタンの間に隙間を追加 */
+    }
+    .search-box { 
+      width: 300px; 
+      padding: 8px; 
+      border-radius: 20px; /* 角を丸くする */
+      border: 1px solid #ccc; /* ボックスに薄い境界線を追加 */
+      box-sizing: border-box;
+    }
+    .search-button {
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: bold;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="message">お手伝いできることはありますか？</div>
+    <div class="search-container">
+      <input type="text" class="search-box" placeholder="ChatGPTにメッセージを送信する" />
+      <button class="search-button">↑</button>
+    </div>
+  </div>
+</body>
+</html>
