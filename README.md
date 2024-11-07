@@ -18,7 +18,7 @@
 
 1. このリポジトリをクローンまたはダウンロードします:
    ```bash
-   git clone https://github.com/<your-username>/PopUpGPT.git
+   git clone https://github.com/Issan0511/PopUpGPT.git
    ```
    または、ZIPファイルをダウンロードして解凍します。
 
