@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "SearchGPT Extension",
+  "name": "PopUpGPT",
   "version": "1.0",
-  "description": " テキストを選択するだけで、選択内容に基づいた検索をすばやく実行します。便利なポップアップアイコンから簡単にアクセス！　　　　　　　　　　　　　アイコン画像： チャットチャット アイコン by Icons8 https://icons8.com/icon/kTuxVYRKeKEY/chatgpt",
+  "description": " テキストを選択するだけで選択内容に基づいた検索を素早く実行します。便利なポップアップアイコンから簡単にアクセス! 画像：チャットチャット アイコン by Icons8 https://icons8.com/icon/kTuxVYRKeKEY/chatgpt",
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",

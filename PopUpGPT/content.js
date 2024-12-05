@@ -38,8 +38,13 @@ button.addEventListener("mousedown", (e) => {
   e.stopPropagation(); // 他のイベントへの伝播を防止
   const selection = window.getSelection().toString().trim();
   if (selection) {
-    const url = `https://chatgpt.com/?q=${encodeURIComponent(selection)}&hints=search&ref=ext&temporary-chat=true`;
-    window.open(url, "_blank");
+    if (e.button === 0) { // 左クリック
+      const url = `https://chatgpt.com/?q=${encodeURIComponent(selection)}&hints=search&ref=ext&temporary-chat=true`;
+      window.open(url, "_blank");
+    } else if (e.button === 2) { // 右クリック
+      const url = `https://chatgpt.com/?q=${encodeURIComponent(selection)}+左の文章が+もし日本語なら英訳してください+もし日本語以外なら和訳してください&hints=search&ref=ext&temporary-chat=true`;
+      window.open(url, "_blank");
+    }
   }
   button.style.display = "none"; // クリック後にボタンを非表示に
   isButtonClick = false; // クリック後にリセット
