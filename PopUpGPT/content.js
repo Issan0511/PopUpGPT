@@ -42,7 +42,7 @@ button.addEventListener("mousedown", (e) => {
       const url = `https://chatgpt.com/?q=${encodeURIComponent(selection)}&hints=search&ref=ext&temporary-chat=true`;
       window.open(url, "_blank");
     } else if (e.button === 2) { // 右クリック
-      const url = `https://chatgpt.com/?q=${encodeURIComponent(selection)}+左の文章が+もし日本語なら英訳してください+もし日本語以外なら和訳してください&hints=search&ref=ext&temporary-chat=true`;
+      const url = `https://chatgpt.com/?q="+${encodeURIComponent(selection)}+"+左の文章が+もし日本語なら英訳してください+もし日本語以外なら和訳してください&ref=ext&temporary-chat=true`;
       window.open(url, "_blank");
     }
   }
