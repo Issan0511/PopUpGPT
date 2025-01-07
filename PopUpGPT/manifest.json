@@ -21,5 +21,13 @@
       "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "commands": {
+    "open-chatgpt": {
+      "suggested_key": {
+        "default": "Alt+G"
+      },
+      "description": "Open ChatGPT"
+    }
+  }
 }
