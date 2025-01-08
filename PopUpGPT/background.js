@@ -22,8 +22,13 @@ chrome.commands.onCommand.addListener((command) => {
   console.log(`Command received: ${command}`);
 
   if (command === "open-chatgpt") {
-    const url = "https://chatgpt.com/";
+    const url = "https://chat.openai.com/";
     chrome.tabs.create({ url: url });
     console.log(`Navigating to ${url}`);
+  }
+  else if (command === "open-deepl") {
+    chrome.tabs.create({
+      url: "https://www.deepl.com/ja/translator"
+    });
   }
 });

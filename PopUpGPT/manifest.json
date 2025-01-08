@@ -28,6 +28,12 @@
         "default": "Alt+G"
       },
       "description": "Open ChatGPT"
+    },
+    "open-deepl": {
+      "suggested_key": {
+        "default": "Alt+T"
+      },
+      "description": "DeepL Translatorを開く"
     }
   }
 }
