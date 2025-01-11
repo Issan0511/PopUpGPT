@@ -31,7 +31,7 @@
     },
     "open-deepl": {
       "suggested_key": {
-        "default": "Alt+T"
+        "default": "Alt+H"
       },
       "description": "DeepL Translatorを開く"
     }

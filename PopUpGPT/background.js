@@ -20,13 +20,14 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 // ショートカットキーのリスナーを追加
 chrome.commands.onCommand.addListener((command) => {
   console.log(`Command received: ${command}`);
-
   if (command === "open-chatgpt") {
+    console.log("Open ChatGPT");
     const url = "https://chat.openai.com/";
     chrome.tabs.create({ url: url });
     console.log(`Navigating to ${url}`);
   }
-  else if (command === "open-deepl") {
+  else {
+    console.log("Open DeepL");
     chrome.tabs.create({
       url: "https://www.deepl.com/ja/translator"
     });
